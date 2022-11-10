@@ -64,3 +64,6 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## About This Repo
+Repo ini adalah repo saya untuk belajar Laravel, repo ini saya gunakan untuk menyimpan setiap progress belajar saya supaya nantinya saya bisa melihat dari awal langkah - langkah yang saya lakukan dalam belajar Laravel
