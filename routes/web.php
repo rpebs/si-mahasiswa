@@ -45,6 +45,6 @@ Route::get('jurusan/tampil', [JurusanController::class, 'show'])->name('tampilju
 Route::get('jurusan/tambah', [JurusanController::class, 'create'])->name('tambahjurusan')->middleware('auth');
 Route::post('jurusan/simpan', [JurusanController::class, 'store'])->name('simpanjurusan')->middleware('auth');
 
-Route::get('jurusan/ubah/{id}', [JurusanController::class, 'edit'])->name('editjurusan')->middleware('auth');
+Route::get('jurusan/ubah/{npm}', [JurusanController::class, 'edit'])->name('editjurusan')->middleware('auth');
 Route::post('jurusan/update', [JurusanController::class, 'update'])->name('updatejurusan')->middleware('auth');
 Route::get('jurusan/hapus/{id}', [JurusanController::class, 'delete'])->name('deletejurusan')->middleware('auth');

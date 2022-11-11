@@ -39,7 +39,7 @@
                 <td>{{ $mhs->jurusan->nama_jurusan }}</td>
 
                 <td>
-                    <a href="/mahasiswa/ubah/{{ $mhs->id }}" class="btn btn-warning btn-sm"><i
+                    <a href="/mahasiswa/ubah/{{ $mhs->npm }}" class="btn btn-warning btn-sm"><i
                             class="fa fa-pencil"></i></a>
                     <a href="/mahasiswa/hapus/{{ $mhs->id }}"
                         onclick="return confirm('Apakah Anda Yakin Menghapus Data?');" class="btn btn-danger btn-sm"><i

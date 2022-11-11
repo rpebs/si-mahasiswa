@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\JurusanModel;
 
 class MahasiswaController extends Controller
-{   
+{
     public function show()
     {
         $data = MahasiswaModel::paginate(9);
@@ -45,24 +45,24 @@ class MahasiswaController extends Controller
         return redirect('mahasiswa/tampil');
     }
 
-    public function edit($id)
-    {   
+    public function edit($npm)
+    {
         $jurusan = JurusanModel::get();
-        $mahasiswa = MahasiswaModel::where('id', $id)->get();
-       
+        $mahasiswa = MahasiswaModel::where('npm', $npm)->get();
+
         return view('ubahmahasiswa', ['mahasiswa' => $mahasiswa, 'jurusan' => $jurusan]);
     }
 
     public function update(Request $request)
-    {   
+    {
         $validated = $request->validate([
             'nama' => 'required|max:255',
             'npm' => 'required|max:255',
             'alamat' => 'required|max:255',
             'jurusan_id' => 'required|max:255',
         ]);
-        
-        $mahasiswa = MahasiswaModel::where('id', $request->id)->update($validated);
+
+        $mahasiswa = MahasiswaModel::where('npm', $request->npm)->update($validated);
          Session::flash('message', 'Data Berhasil Diubah');
         return redirect()->route('tampil');
     }

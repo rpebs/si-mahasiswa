@@ -17,7 +17,13 @@ class JurusanSeeder extends Seeder
          \App\Models\JurusanModel::insert([
             'nama_jurusan' => 'Teknik Informatika',
             'kode' => 'TI',
-            
+
+
+        ]);
+
+        \App\Models\JurusanModel::insert([
+            'nama_jurusan' => 'Manajemen Bisnis',
+            'kode' => 'MB',
         ]);
     }
 }

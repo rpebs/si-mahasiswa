@@ -18,7 +18,7 @@ class MahasiswaModelFactory extends Factory
     {
         return [
             'nama' => $this->faker->name(),
-            'npm' => $this->faker->randomDigit(10000000),
+            'npm' => $this->faker->numberBetween(11000000,19999999),
             'alamat' =>$this->faker->address(),
             'jurusan_id' =>rand(1,2)
         ];
