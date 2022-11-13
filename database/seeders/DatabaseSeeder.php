@@ -25,5 +25,27 @@ class DatabaseSeeder extends Seeder
             'role' => 'Administrator',
         ]);
 
+        \App\Models\DosenModel::factory(10)->create();
+
+
+        
+
+        \App\Models\JurusanModel::insert([
+            'nama_jurusan' => 'Teknik Informatika',
+            'kode' => 'TI',
+
+
+        ]);
+
+        \App\Models\JurusanModel::insert([
+            'nama_jurusan' => 'Manajemen Bisnis',
+            'kode' => 'MB',
+        ]);
+
+        \App\Models\MahasiswaModel::factory(20)->create();
+
+         \App\Models\MataKuliahModel::factory(4)->create();
+
+
     }
 }

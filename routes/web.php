@@ -1,11 +1,13 @@
 <?php
 
+use App\Http\Controllers\DosenController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\MataKuliahController;
 
 /*
 |--------------------------------------------------------------------------
@@ -48,3 +50,17 @@ Route::post('jurusan/simpan', [JurusanController::class, 'store'])->name('simpan
 Route::get('jurusan/ubah/{npm}', [JurusanController::class, 'edit'])->name('editjurusan')->middleware('auth');
 Route::post('jurusan/update', [JurusanController::class, 'update'])->name('updatejurusan')->middleware('auth');
 Route::get('jurusan/hapus/{id}', [JurusanController::class, 'delete'])->name('deletejurusan')->middleware('auth');
+
+Route::get('dosen/tampil', [DosenController::class, 'show'])->name('tampildosen')->middleware('auth');
+Route::get('dosen/tambah', [DosenController::class, 'create'])->name('tambahdosen')->middleware('auth');
+Route::post('dosen/simpan', [DosenController::class, 'store'])->name('simpandosen')->middleware('auth');
+Route::get('dosen/ubah/{nip}', [DosenController::class, 'edit'])->name('ubahdosen')->middleware('auth');
+Route::post('dosen/update',[DosenController::class, 'update'])->name('updatedosen')->middleware('auth');
+Route::get('dosen/hapus/{nip}', [DosenController::class, 'delete'])->name('hapusdosen')->middleware('auth');
+
+Route::get('matkul/tampil', [MataKuliahController::class, 'show'])->name('tampilmatkul')->middleware('auth');
+Route::get('matkul/tambah', [MataKuliahController::class, 'create'])->name('tambahmatkul')->middleware('auth');
+Route::post('matkul/simpan', [MataKuliahController::class, 'store'])->name('simpanmatkul')->middleware('auth');
+Route::get('matkul/ubah/{kode_matkul}', [MataKuliahController::class, 'edit'])->name('ubahmatkul')->middleware('auth');
+Route::post('matkul/update', [MataKuliahController::class, 'update'])->name('updatematkul')->middleware('auth');
+Route::get('matkul/hapus/{kode_matkul}', [MataKuliahController::class, 'delete'])->name('hapusmatkul')->middleware('auth');

@@ -14,7 +14,7 @@
         @endif
         <form class="col-md-6" method="post" action="{{ route('update') }}">
             @csrf
-            <input type="hidden" name="id" value="{{ $mhs->id }}">
+            <input type="hidden" name="id" value="{{ $mhs->npm }}">
             <div class="form-group">
                 <label>Nama Mahasiswa</label>
                 <input type="text" name="nama" value="{{ $mhs->nama }}" class="form-control"

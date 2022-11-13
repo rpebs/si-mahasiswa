@@ -9,14 +9,23 @@
 
 
     <div class="row">
-        <div class="ms-3 col-md-3 p-4 bg-primary text-light text-center">
+        <div class="ms-3 col-md-2 p-4 bg-primary text-light text-center">
             Data Mahasiswa
             <a href="mahasiswa/tampil" class="btn btn-sm btn-success">Cek Data</a>
         </div>
 
-        <div class="ms-3 col-md-3 p-4 bg-success text-light text-center">
+        <div class="ms-3 col-md-2 p-4 bg-success text-light text-center">
             Data Jurusan
             <a href="jurusan/tampil" class="btn btn-sm btn-primary">Cek Data</a>
+        </div>
+
+        <div class="ms-3 col-md-2 p-4 bg-danger text-light text-center">
+            Data Dosen
+            <a href="dosen/tampil" class="btn btn-sm btn-success">Cek Data</a>
+        </div>
+        <div class="ms-3  col-md-2 p-4 bg-warning text-light text-center">
+            Data Mata Kuliah
+            <a href="matkul/tampil" class="btn btn-sm btn-danger">Cek Data</a>
         </div>
     </div>
 @endsection

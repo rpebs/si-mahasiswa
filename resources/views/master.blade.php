@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Aplikasi Nilai Santri</title>
+    <title>Aplikasi SI Kampus</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
@@ -15,10 +15,10 @@
 </head>
 
 <body>
-    <div class="container">
+    <div class="container-fluid">
         <div class="col-md-12">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
+                <div class="container">
                     <a class="navbar-brand" href="#">DHANYRPEBS</a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -36,8 +36,8 @@
                                 <a class="nav-link" href="#">Pricing</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link disabled" href="#" tabindex="-1"
-                                    aria-disabled="true">Disabled</a>
+                                <a class="nav-link" href="{{ route('actionlogout') }}" tabindex="-1"
+                                    aria-disabled="true">Logout</a>
                             </li>
                         </ul>
                     </div>
