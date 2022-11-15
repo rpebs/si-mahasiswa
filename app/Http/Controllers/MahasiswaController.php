@@ -75,9 +75,38 @@ class MahasiswaController extends Controller
     }
 
     public function search(Request $request)
-    {
-        $keyword = $request->search;
-        $mahasiswa = MahasiswaModel::where('nama', 'like', "%" . $keyword . "%")->paginate(9);
-        return view('tampilmahasiswa', compact('mahasiswa'))->with('i', (request()->input('page',1)-1)*5);
+    {   
+        if($request->ajax())
+        {   
+            $keyword = $request->search;
+            $output ="";
+            $mahasiswa = MahasiswaModel::where('nama', 'like', "%" . $keyword . "%")->paginate(9);
+            if($mahasiswa)
+            {
+                foreach ($mahasiswa as $key => $mahasiswa){
+                    $output.='<tr>'.
+                    '<td>'.$mahasiswa->id.'</td>'.
+                    '<td>'.$mahasiswa->nama.'</td>'.
+                    '<td>'.$mahasiswa->npm.'</td>'.
+                    '<td>'.$mahasiswa->alamat.'</td>'.
+                    '<td>'.$mahasiswa->jurusan->nama_jurusan.'</td>'.
+                    '<td>'.'<a href="/mahasiswa/ubah/'.$mahasiswa->npm.'" class="btn btn-warning btn-sm">'.'<i
+                            class="fa fa-pencil">'.'</i>'.'</a>'.
+                    '<a href="/mahasiswa/hapus/'.$mahasiswa->id.'"'.
+                        'onclick="return confirm('.'Apakah Anda Yakin Menghapus Data?'.');'.'" class="btn btn-danger btn-sm"><i
+                            class="fa fa-trash"></i></a>'.
+                '</td>'.
+                    '</tr>';
+                }
+                
+                return Response($output);
+
+
+               
+            }
+        }
+        
+        // $mahasiswa = MahasiswaModel::where('nama', 'like', "%" . $keyword . "%")->paginate(9);
+        // return view('tampilmahasiswa', compact('mahasiswa'))->with('i', (request()->input('page',1)-1)*5);
     }
 }

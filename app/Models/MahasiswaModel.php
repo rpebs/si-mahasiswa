@@ -22,7 +22,7 @@ class MahasiswaModel extends Model
 
     public function jurusan()
     {
-        return $this->belongsTo(JadwalModel::class);
+        return $this->belongsTo(JurusanModel::class);
     }
         
 }
