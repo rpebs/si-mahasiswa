@@ -22,6 +22,6 @@ class DosenModel extends Model
 
     public function jadwal()
     {
-        return $this->hasOne('App\JadwalModel');
+        return $this->hasMany(JadwalModel::class);
     }
 }

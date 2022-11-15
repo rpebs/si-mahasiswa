@@ -14,14 +14,20 @@ class JadwalModel extends Model
     protected $primaryKey = 'id';
     protected $fillable = [
         'hari',
-        'mata_kuliah_id',
+        'dosen_id',
+        'matkul_id',
         'jam_mulai',
         'jam_selesai',
     ];
 
    public function dosen()
     {
-        return $this->belongsTo('App\Models\DosenModel');
+        return $this->belongsTo(DosenModel::class);
+    }
+
+    public function matkul()
+    {
+        return $this->belongsTo(MataKuliahModel::class);
     }
 
 

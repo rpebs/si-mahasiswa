@@ -67,3 +67,7 @@ Route::post('matkul/update', [MataKuliahController::class, 'update'])->name('upd
 Route::get('matkul/hapus/{kode_matkul}', [MataKuliahController::class, 'delete'])->name('hapusmatkul')->middleware('auth');
 
 Route::get('jadwal/tampil', [JadwalController::class, 'show'])->name('tampiljadwal')->middleware('auth');
+Route::get('jadwal/tambah', [JadwalController::class, 'create'])->name('tambahjadwal')->middleware('auth');
+Route::post('jadwal/simpan', [JadwalController::class, 'store'])->name('simpanjadwal')->middleware('auth');
+
+Route::get('jadwal/hapus/{id}', [JadwalController::class, 'delete'])->name('hapusjadwal')->middleware('auth');

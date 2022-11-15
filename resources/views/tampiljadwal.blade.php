@@ -2,7 +2,7 @@
 
 @section('konten')
     <h3>Tampil Data Mahasiswa</h3>
-    <a class="btn btn-success" href="{{ route('tampil') }}"><i class="fa fa-plus"></i> Tambah Jadwal</a><br><br>
+    <a class="btn btn-success" href="{{ route('tambahjadwal') }}"><i class="fa fa-plus"></i> Tambah Jadwal</a><br><br>
     @if (session('message'))
         <div class="alert alert-success">
             {{ session('message') }}
@@ -23,16 +23,14 @@
                 <td>{{ $jd->id }}</td>
                 <td>{{ $jd->hari }}</td>
                 <td>{{ $jd->dosen->nama_dosen ?? 'none' }}</td>
-                <td>{{ $jd->mata_kuliah->nama_matkul ?? 'none' }}</td>
+                <td>{{ $jd->matkul->nama_matkul ?? 'none' }}</td>
                 <td>{{ $jd->jam_mulai }}</td>
                 <td>{{ $jd->jam_selesai }}</td>
 
                 <td>
-                    <a href="/mahasiswa/ubah/{{ $jd->hari }}" class="btn btn-warning btn-sm"><i
-                            class="fa fa-pencil"></i></a>
-                    <a href="/mahasiswa/hapus/{{ $jd->hari }}"
-                        onclick="return confirm('Apakah Anda Yakin Menghapus Data?');" class="btn btn-danger btn-sm"><i
-                            class="fa fa-trash"></i></a>
+                    <a href="/jadwal/ubah/{{ $jd->id }}" class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i></a>
+                    <a href="/jadwal/hapus/{{ $jd->id }}" onclick="return confirm('Apakah Anda Yakin Menghapus Data?');"
+                        class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
                 </td>
             </tr>
         @empty
