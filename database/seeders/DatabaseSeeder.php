@@ -46,6 +46,16 @@ class DatabaseSeeder extends Seeder
 
          \App\Models\MataKuliahModel::factory(4)->create();
 
+         \App\Models\JadwalModel::insert([
+            'hari' => 'Senin',
+            'dosen_id' => '3',
+            'matkul_id' => '2',
+            'jam_mulai' => '18:00',
+            'jam_selesai' => '19:00',
+
+
+        ]);
+
 
     }
 }

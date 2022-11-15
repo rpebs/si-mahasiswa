@@ -3,6 +3,7 @@
 use App\Http\Controllers\DosenController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\JurusanController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
@@ -64,3 +65,5 @@ Route::post('matkul/simpan', [MataKuliahController::class, 'store'])->name('simp
 Route::get('matkul/ubah/{kode_matkul}', [MataKuliahController::class, 'edit'])->name('ubahmatkul')->middleware('auth');
 Route::post('matkul/update', [MataKuliahController::class, 'update'])->name('updatematkul')->middleware('auth');
 Route::get('matkul/hapus/{kode_matkul}', [MataKuliahController::class, 'delete'])->name('hapusmatkul')->middleware('auth');
+
+Route::get('jadwal/tampil', [JadwalController::class, 'show'])->name('tampiljadwal')->middleware('auth');

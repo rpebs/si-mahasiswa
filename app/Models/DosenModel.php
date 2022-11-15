@@ -19,4 +19,9 @@ class DosenModel extends Model
         'no_hp',
         'nip',
     ];
+
+    public function jadwal()
+    {
+        return $this->hasOne('App\JadwalModel');
+    }
 }
