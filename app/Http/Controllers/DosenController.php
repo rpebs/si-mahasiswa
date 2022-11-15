@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\DosenModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
 class DosenController extends Controller
@@ -67,10 +70,18 @@ class DosenController extends Controller
     }
 
     public function delete($nip)
-    {
-        $dosen = DosenModel::where('nip', $nip)->delete();
-        Session::flash('message', 'Data Berhasil Dihapus');
-        return redirect()->route('tampildosen');
+    {   
+        $condition = DB::table('dosen')->where('nip', '=', $nip)->get('id');
+        $where = DB::table('dosen')->join('jadwal', 'dosen.id', '=', 'jadwal.dosen_id')->select('dosen.id')->where('jadwal.dosen_id', '=', $condition->implode('id'))->get();
+        if($where->isNotEmpty()){
+            Session::flash('failed', 'Dosen Masuk Kedalam Jadwal');
+            return redirect()->route('tampildosen');
+        }else{
+            $dosen = DosenModel::where('nip', $nip)->delete();
+            Session::flash('message', 'Data Berhasil Dihapus');
+            return redirect()->route('tampildosen');
+        }
+        
     }
 
     public function search(Request $request)

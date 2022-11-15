@@ -8,6 +8,11 @@
             {{ session('message') }}
         </div>
     @endif
+    @if (session('failed'))
+        <div class="alert alert-danger">
+            {{ session('failed') }}
+        </div>
+    @endif
     {{-- <form class="row g-3" method="get" action="{{ route('search') }}">
         <label for="search" class="form-label"><b>Pencarian</b></label>
         <div class="input-group w-25 mb-3" style="margin-top: -5px">
@@ -41,8 +46,9 @@
                 <td>{{ $d->email }}</td>
                 <td>
                     <a href="/dosen/ubah/{{ $d->nip }}" class="btn btn-warning btn-sm"><i class="fa fa-pencil"></i></a>
-                    <a href="/dosen/hapus/{{ $d->nip }}" onclick="return confirm('Apakah Anda Yakin Menghapus Data?');"
-                        class="btn btn-danger btn-sm"><i class="fa fa-trash"></i></a>
+                    <a href="/dosen/hapus/{{ $d->nip }}"
+                        onclick="return confirm('Apakah Anda Yakin Menghapus Data?');" class="btn btn-danger btn-sm"><i
+                            class="fa fa-trash"></i></a>
                 </td>
             </tr>
         @empty

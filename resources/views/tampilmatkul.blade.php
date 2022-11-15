@@ -8,6 +8,11 @@
             {{ session('message') }}
         </div>
     @endif
+    @if (session('failed'))
+        <div class="alert alert-danger">
+            {{ session('failed') }}
+        </div>
+    @endif
     {{-- <form class="row g-3" method="get" action="{{ route('search') }}">
         <label for="search" class="form-label"><b>Pencarian</b></label>
         <div class="input-group w-25 mb-3" style="margin-top: -5px">
