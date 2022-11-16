@@ -13,13 +13,13 @@ class MahasiswaController extends Controller
     public function show()
     {
         $data = MahasiswaModel::paginate(9);
-        return view('tampilmahasiswa', ['mahasiswa' => $data]);
+        return view('tampilmahasiswa', ['mahasiswa' => $data, 'title' => 'SI Kampus | Data Mahasiswa']);
     }
 
     public function create()
     {
         $jurusan = JurusanModel::get();
-        return view('tambahmahasiswa', ['jurusan' => $jurusan]);
+        return view('tambahmahasiswa', ['jurusan' => $jurusan, 'title' => 'SI Kampus | Tambah Data Mahasiswa']);
     }
 
     public function store(Request $request)
@@ -50,7 +50,7 @@ class MahasiswaController extends Controller
         $jurusan = JurusanModel::get();
         $mahasiswa = MahasiswaModel::where('npm', $npm)->get();
 
-        return view('ubahmahasiswa', ['mahasiswa' => $mahasiswa, 'jurusan' => $jurusan]);
+        return view('ubahmahasiswa', ['mahasiswa' => $mahasiswa, 'jurusan' => $jurusan, 'title' => 'SI Kampus | Ubah Data Mahasiswa']);
     }
 
     public function update(Request $request)

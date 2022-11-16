@@ -13,7 +13,7 @@ class JadwalController extends Controller
     public function show()
     {
         $jadwal = JadwalModel::paginate(9);
-        return view('tampiljadwal', ['jadwal' => $jadwal]);
+        return view('tampiljadwal', ['jadwal' => $jadwal, 'title' => 'SI Kampus | Data Jadwal']);
         
     }
 
@@ -21,7 +21,7 @@ class JadwalController extends Controller
     {   
         $dosen = DosenModel::get();
         $matkul = MataKuliahModel::get();
-        return view('tambahjadwal', ['dosen' => $dosen, 'mata_kuliah' => $matkul]);
+        return view('tambahjadwal', ['dosen' => $dosen, 'mata_kuliah' => $matkul, 'title' => 'SI Kampus | Tambah Data Jadwal']);
     }
 
     public function store(Request $request)
@@ -48,7 +48,7 @@ class JadwalController extends Controller
         $matkul = MataKuliahModel::get();
         $jadwal = JadwalModel::where('id', $id)->get();
 
-        return view('ubahjadwal', ['jadwal' => $jadwal, 'dosen' => $dosen, 'mata_kuliah' => $matkul]);
+        return view('ubahjadwal', ['jadwal' => $jadwal, 'dosen' => $dosen, 'mata_kuliah' => $matkul, 'title' => 'SI Kampus | Ubah Jadwal']);
     }
 
     public function update(Request $request)

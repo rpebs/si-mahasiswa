@@ -14,12 +14,12 @@ class MataKuliahController extends Controller
      public function show()
     {
         $mata_kuliah = MataKuliahModel::paginate(9);
-        return view('tampilmatkul', ['mata_kuliah' => $mata_kuliah]);
+        return view('tampilmatkul', ['mata_kuliah' => $mata_kuliah, 'title' => 'SI Kampus | Data Mata Kuliah']);
     }
 
     public function create()
     {
-        return view('tambahmatkul');
+        return view('tambahmatkul', ['title' => 'SI Kampus | Tambah Mata Kuliah']);
     }
 
     public function store(Request $request)
@@ -40,7 +40,7 @@ class MataKuliahController extends Controller
     {   
         $matkul = MataKuliahModel::where('kode_matkul', $kode_matkul)->get();
        
-        return view('ubahmatkul', ['mata_kuliah' => $matkul]);
+        return view('ubahmatkul', ['mata_kuliah' => $matkul, 'title' => 'SI Kampus | Ubah Data Mata Kuliah']);
     }
 
     public function update(Request $request)

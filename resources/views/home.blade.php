@@ -9,7 +9,7 @@
 
 
     <div class="row">
-        <div class="ms-3 col-md-2 p-4 bg-primary text-light text-center">
+        <div class="ms-5 col-md-2 p-4 bg-primary text-light text-center">
             Data Mahasiswa
             <a href="mahasiswa/tampil" class="btn btn-sm btn-success">Cek Data</a>
         </div>
@@ -26,6 +26,10 @@
         <div class="ms-3  col-md-2 p-4 bg-warning text-light text-center">
             Data Mata Kuliah
             <a href="matkul/tampil" class="btn btn-sm btn-danger">Cek Data</a>
+        </div>
+        <div class="ms-3  col-md-2 p-4 bg-dark text-light text-center">
+            Data Jadwal Kuliah
+            <a href="jadwal/tampil" class="btn btn-sm btn-danger">Cek Data</a>
         </div>
     </div>
 @endsection

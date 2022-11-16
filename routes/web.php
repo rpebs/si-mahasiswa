@@ -58,6 +58,7 @@ Route::post('dosen/simpan', [DosenController::class, 'store'])->name('simpandose
 Route::get('dosen/ubah/{nip}', [DosenController::class, 'edit'])->name('ubahdosen')->middleware('auth');
 Route::post('dosen/update',[DosenController::class, 'update'])->name('updatedosen')->middleware('auth');
 Route::get('dosen/hapus/{nip}', [DosenController::class, 'delete'])->name('hapusdosen')->middleware('auth');
+Route::get('dosen/search', [DosenController::class, 'search'])->name('searchdosen')->middleware('auth');
 
 Route::get('matkul/tampil', [MataKuliahController::class, 'show'])->name('tampilmatkul')->middleware('auth');
 Route::get('matkul/tambah', [MataKuliahController::class, 'create'])->name('tambahmatkul')->middleware('auth');

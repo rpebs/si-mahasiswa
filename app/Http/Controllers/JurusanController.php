@@ -11,12 +11,12 @@ class JurusanController extends Controller
     public function show()
     {
         $jurusan = JurusanModel::paginate(9);
-        return view('tampiljurusan', ['jurusan' => $jurusan]);
+        return view('tampiljurusan', ['jurusan' => $jurusan, 'title' => 'SI Kampus | Data Jurusan']);
     }
 
     public function create()
     {
-        return view('tambahjurusan');
+        return view('tambahjurusan', ['title' => 'SI Kampus | Tambah Data Jurusan']);
     }
 
     public function store(Request $request)
@@ -44,7 +44,7 @@ class JurusanController extends Controller
     {   
         $jurusan = JurusanModel::where('id', $id)->get();
        
-        return view('ubahjurusan', ['jurusan' => $jurusan]);
+        return view('ubahjurusan', ['jurusan' => $jurusan, 'title'=>'SI Kampus | Ubah Data Jurusan']);
     }
 
     public function update(Request $request)

@@ -12,8 +12,8 @@
     <label for="search" class="form-label"><b>Pencarian</b></label>
     <div class="input-group w-25 mb-3" style="margin-top: -5px">
 
-        <input type="text" name="search" class="form-control" id="search">
-        <button type="submit" class="d-flex btn btn-md btn-primary">Cari</button>
+        <input type="text" name="search" class="form-control" id="search" placeholder="Masukkan Nama Mahasiswa">
+
     </div>
 
 
